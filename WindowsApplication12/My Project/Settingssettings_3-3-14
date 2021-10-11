@@ -1,0 +1,39 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="O_Drive" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">\\172.22.39.100\PUBLIC1</Value>
+    </Setting>
+    <Setting Name="NAPAConnectionString" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">data source=vebb2asql03\live;initial catalog=NAPA;user id=Appl_sa;password=Appl2011</Value>
+    </Setting>
+    <Setting Name="NAPAQuestConnectionString" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">data source=vebb2asql03\live;initial catalog=QUESTPDMNAPA;user id=Appl_sa;password=Appl2011</Value>
+    </Setting>
+    <Setting Name="JBAConnectionString" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Provider=IBMDA400;Data Source=ITGC600A;Persist Security Info=True;User ID=DTATFR;Password=DTATFRX;Default Collection=VEUGPL;Force Translate=37</Value>
+    </Setting>
+    <Setting Name="JBADefaultLibrary" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">VEUGPL</Value>
+    </Setting>
+    <Setting Name="smsColorCount" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">12</Value>
+    </Setting>
+    <Setting Name="ColorCount" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">30</Value>
+    </Setting>
+    <Setting Name="ThumbnailLocation" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">\\172.20.37.42\QUESTPDM\Napa\Thumbnails\</Value>
+    </Setting>
+    <Setting Name="LocalPicLocation" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">c:\VFFILES</Value>
+    </Setting>
+    <Setting Name="PictureLocationsToReplace" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">\\TSCLIENT\P\,\\VEVP2A02\PUBLIC\,\\TSCLIENT\PUBLIC\,\\vevpn3600a\PUBLIC1</Value>
+    </Setting>
+    <Setting Name="RGBPictureLocation" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">\\VEBBN53001\QuestPDMNapapijri\NAPA\Picture\rgb</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

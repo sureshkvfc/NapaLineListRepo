@@ -1,0 +1,42 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="NAPAConnectionString" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Data Source=vebb2asql03\live;Initial Catalog=NAPA;Integrated Security=True</Value>
+    </Setting>
+    <Setting Name="NAPAQuestConnectionString" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Data Source=vebb2asql03\live;Initial Catalog=NAPA;Integrated Security=True</Value>
+    </Setting>
+    <Setting Name="JBAConnectionString" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Provider=IBMDA400;Data Source=ITGC600A;Persist Security Info=True;User ID=DTATFR;Password=DTATFRX;Default Collection=VEUGPL;Force Translate=37</Value>
+    </Setting>
+    <Setting Name="JBADefaultLibrary" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">VEUGPL</Value>
+    </Setting>
+    <Setting Name="smsColorCount" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">12</Value>
+    </Setting>
+    <Setting Name="RGBPictureLocation" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">\\VEBBN53001\QuestPDMNapapijri\NAPA\Picture\rgb</Value>
+    </Setting>
+    <Setting Name="PictureLocationsToReplace" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">\\TSCLIENT\P\,\\VEVP2A02\PUBLIC\,\\TSCLIENT\PUBLIC\,\\VEVP2N6210A\public</Value>
+    </Setting>
+    <Setting Name="ColorCount" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">32</Value>
+    </Setting>
+    <Setting Name="NAPARootFolder" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">\\vebb2a24\BEBORQUESTPDM\Linelist\Napa\</Value>
+    </Setting>
+    <Setting Name="LocalPicLocation" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">\\vebb2a24\BEBORQUESTPDM\Linelist\Napa\NAPAFiles</Value>
+    </Setting>
+    <Setting Name="ThumbnailLocation" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">\\vebb2a24\BEBORQUESTPDM\Linelist\Napa\Thumbnails\</Value>
+    </Setting>
+    <Setting Name="O_Drive" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">\\vebb2v7000\public</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

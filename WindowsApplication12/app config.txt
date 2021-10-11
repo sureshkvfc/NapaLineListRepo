@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<configuration>
+    <configSections>
+        <sectionGroup name="applicationSettings" type="System.Configuration.ApplicationSettingsGroup, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <section name="NapaLineList.My.MySettings" type="System.Configuration.ClientSettingsSection, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" requirePermission="false"/>
+        </sectionGroup>
+    </configSections>
+    <system.diagnostics>
+        <sources>
+            <!-- This section defines the logging configuration for My.Application.Log -->
+            <source name="DefaultSource" switchName="DefaultSwitch">
+                <listeners>
+                    <add name="FileLog"/>
+                    <!-- Uncomment the below section to write to the Application Event Log -->
+                    <!--<add name="EventLog"/>-->
+                </listeners>
+            </source>
+        </sources>
+        <switches>
+            <add name="DefaultSwitch" value="Information"/>
+        </switches>
+        <sharedListeners>
+            <add name="FileLog" type="Microsoft.VisualBasic.Logging.FileLogTraceListener, Microsoft.VisualBasic, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" initializeData="FileLogWriter"/>
+            <!-- Uncomment the below section and replace APPLICATION_NAME with the name of your application to write to the Application Event Log -->
+            <!--<add name="EventLog" type="System.Diagnostics.EventLogTraceListener" initializeData="APPLICATION_NAME"/> -->
+        </sharedListeners>
+    </system.diagnostics>
+    <applicationSettings>
+        <NapaLineList.My.MySettings>
+            <setting name="NAPAConnectionString" serializeAs="String">
+                <value>data source=vebb2asql03\live;initial catalog=NAPA;user id=Appl_sa;password=Appl2011</value>
+            </setting>
+            <setting name="NAPAQuestConnectionString" serializeAs="String">
+                <value>data source=vebb2asql03\live;initial catalog=QUESTPDMNAPA;user id=Appl_sa;password=Appl2011</value>
+            </setting>
+            <setting name="JBAConnectionString" serializeAs="String">
+                <value>Provider=IBMDA400;Data Source=ITGC600A;Persist Security Info=True;User ID=DTATFR;Password=DTATFRX;Default Collection=VEUGPL;Force Translate=37</value>
+            </setting>
+            <setting name="JBADefaultLibrary" serializeAs="String">
+                <value>VEUGPL</value>
+            </setting>
+            <setting name="smsColorCount" serializeAs="String">
+                <value>12</value>
+            </setting>
+            <setting name="ColorCount" serializeAs="String">
+                <value>30</value>
+            </setting>
+            <setting name="LocalPicLocation" serializeAs="String">
+                <value>c:\VFFILES</value>
+            </setting>
+            <setting name="ThumbnailLocation" serializeAs="String">
+                <value>\\172.20.37.42\QUESTPDM\Napa\Thumbnails\</value>
+            </setting>
+            <setting name="RGBPictureLocation" serializeAs="String">
+                <value>\\VEBBN53001\QuestPDMNapapijri\NAPA\Picture\rgb</value>
+            </setting>
+            <setting name="O_Drive" serializeAs="String">
+                <value>\\172.22.39.124\PUBLIC1</value>
+            </setting>
+            <setting name="PictureLocationsToReplace" serializeAs="String">
+                <value>\\TSCLIENT\P\,\\VEVP2A02\PUBLIC\,\\TSCLIENT\PUBLIC\,\\172.22.39.124\PUBLIC1</value>
+            </setting>
+        </NapaLineList.My.MySettings>
+    </applicationSettings>
+<startup><supportedRuntime version="v2.0.50727"/></startup></configuration>

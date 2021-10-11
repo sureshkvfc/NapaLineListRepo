@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Settings>
+  <Frames>
+    <Frame Name="Search" isFilter="0">
+      <table>QUESTPDMNAPA.dbo.ARTICLE</table>
+      <Fields>
+        <Field>
+          <FldDesc>Article Key:</FldDesc>
+          <FldSql>ARTIKEY</FldSql>
+          <FldValue>DESCRIP10</FldValue>
+        </Field>
+        <Field>
+          <FldDesc>Rmn:</FldDesc>
+          <FldSql>DESCRIP10</FldSql>
+          <FldValue>ARTIKEY</FldValue>
+        </Field>
+      </Fields>
+    </Frame>
+
+    <Frame Name="Into" isFilter="0">
+      <table>QUESTPDMNAPA.dbo.ARTICLE</table>
+      <Fields>
+        <Field>
+          <FldDesc>Article Key:</FldDesc>
+          <FldSql>ARTIKEY</FldSql>
+          <FldValue>DESCRIP10</FldValue>
+      </Field>
+        <Field>
+          <FldDesc>Rmn:</FldDesc>
+          <FldSql>DESCRIP10</FldSql>
+          <FldValue>ARTIKEY</FldValue>
+        </Field>
+      </Fields>
+    </Frame>
+
+    <Frame Name="Filters" isFilter="1">
+      <table>QUESTPDMNAPA.dbo.Styles</table>
+      <Fields>
+        <Field>
+          <FldDesc>Season:</FldDesc>
+          <FldSql>KEY2</FldSql>
+        </Field>
+        <Field>
+          <FldDesc>Major:</FldDesc>
+          <FldSql>MOC039</FldSql>
+        </Field>
+        <Field>
+          <FldDesc>Minor:</FldDesc>
+          <FldSql>MOC024</FldSql>
+        </Field>
+        <Field>
+          <FldDesc>Gender:</FldDesc>
+          <FldSql>MOC023</FldSql>
+        </Field>
+        <Field>
+          <FldDesc>Line:</FldDesc>
+          <FldSql>MOC066</FldSql>
+        </Field>
+        <Field>
+          <FldDesc>Use:</FldDesc>
+          <FldSql>MOC075</FldSql>
+        </Field>
+        <Field>
+          <FldDesc>Product Manager:</FldDesc>
+          <FldSql>MOC087</FldSql>
+        </Field>
+      </Fields >
+    </Frame>
+ 
+    <Frame Name="Extra" isFilter="1">
+      <table>QUESTPDMNAPA.dbo.specific</table>
+      <Fields>
+        <Field>
+          <FldDesc>Article Type:</FldDesc>
+          <FldSql>ARTICTYPE</FldSql>
+          <FldTyp>CHAR</FldTyp>
+        </Field>
+        <Field>
+          <FldDesc>Groups:</FldDesc>
+          <FldSql>COMMENT1</FldSql>
+          <FldTyp>CHAR</FldTyp>
+        </Field>
+        <Field>
+          <FldDesc>Quantity:</FldDesc>
+          <FldSql>QUANTITY</FldSql>
+          <FldTyp>NUM</FldTyp>
+        </Field>
+        <Field>
+          <FldDesc>Quantity 2:</FldDesc>
+          <FldSql>COMMENT3</FldSql>
+          <FldTyp>CHAR</FldTyp>
+        </Field>
+        <Field>
+          <FldDesc>TAW:</FldDesc>
+          <FldSql>TRIMLIST</FldSql>
+          <FldTyp>NUM</FldTyp>
+        </Field>
+        <Field>
+          <FldDesc>Operation:</FldDesc>
+          <FldSql>COMMENT2</FldSql>
+          <FldTyp>CHAR</FldTyp>
+        </Field>
+      </Fields >
+    </Frame>
+  </Frames>
+
+  <view lockColumn="Reclock">
+    <valSQL>Select * from QUESTPDMNAPA.dbo.Article where %tag = '%val'</valSQL>
+    <sql>Select s.mainkey Mainkey, s.moc015 JbaCode,s.moc008 Stylename, sp.NO_IN_ROW RowNo , s.moc090 Colors, s.moc001 Brand, s.moc023 Gender,  s.moc025 Major, s.moc028 Minor, sp.comment3 SpecComment,(select rl.userid from QUESTPDMNAPA.dbo.reclocks  rl where rl.modulname='SPECIFICATION...' and rl.mainkey=s.mainkey) Reclock from QUESTPDMNAPA.dbo.styles s left join QUESTPDMNAPA.dbo.specific sp on s.mainkey = sp.mainkey</sql>
+    <orderby>order by s.mainkey</orderby>
+  </view>
+
+  <Updates>
+  <Update LC="0" XTR="1">
+    <sql>update QUESTPDMNAPA.dbo.specific set ALTSEEKFLD='',</sql>
+    <Fields table="SPECIFIC">
+      <Field>
+        <ArtFlds>ARTIKEY</ArtFlds>
+        <DesFlds>ARTIKEY</DesFlds>
+      </Field>
+      <Field>
+        <ArtFlds>ARTNO</ArtFlds>
+        <DesFlds>ARTNO</DesFlds>
+      </Field>
+      <Field>
+        <ArtFlds>ARTICLENO</ArtFlds>
+        <DesFlds>ARTICLENO</DesFlds>
+      </Field>
+      <Field>
+        <ArtFlds>DESCRIP1</ArtFlds>
+        <DesFlds>DESCRIP</DesFlds>
+      </Field>
+    </Fields>
+    <sqlwhereView>
+      <Field>
+        <TABLEFLD>MAINKEY</TABLEFLD>
+        <VWFLD>MAINKEY</VWFLD>
+      </Field>
+      <Field>
+        <TABLEFLD>NO_IN_ROW</TABLEFLD>
+        <VWFLD>RowNo</VWFLD>
+      </Field>
+    </sqlwhereView>
+    <style>UPDATE QUESTPDMNAPA.dbo.Styles set changeDate = getdate()</style>
+    <sqlwhereStyles>
+      <Field>
+        <TABLEFLD>MAINKEY</TABLEFLD>
+        <VWFLD>MAINKEY</VWFLD>
+      </Field>
+    </sqlwhereStyles>
+  </Update>
+
+  <Update LC="0" XTR="0">
+    <sql>update QUESTPDMNAPA.dbo.colorset set</sql>
+    <Fields table="COLORSET">
+      <Field>
+        <ArtFlds>ARTIKEY</ArtFlds>
+        <DesFlds>ARTIKEY</DesFlds>
+      </Field>
+    </Fields>
+    <sqlwhereView>
+      <Field>
+        <TABLEFLD>MAINKEY</TABLEFLD>
+        <VWFLD>Mainkey</VWFLD>
+      </Field>
+      <Field>
+        <TABLEFLD>SPECKEY</TABLEFLD>
+        <VWFLD>RowNo</VWFLD>
+      </Field>
+    </sqlwhereView>
+    <style></style>
+  </Update>
+  </Updates>
+
+  <Log
+    log="insert into NAPA.dbo.pdmlog (lognum,luser,databasename,Ltype,Ldate,mainkey,olinekey,ldata,recno) values (%MAXLOG,'VF','COLORSET','Mass Update',getdate(),'%KEY','%OLINE','%DATA',%RECNO)"
+    maxnum="select max(lognum), max(recno) from NAPA.dbo.pdmlog"
+    logPDM="insert into QUESTPDMNAPA.dbo.txlog (recno, txID, txDate, txUser, txTable, txComment, mainkey, txType, txRecno, NO_IN_ROW) values (%MAXLOG,%MAXLOG,getdate(),'%USER','SPECIFIC','%COMMENT','%MAINKEY','U',0,%NO_IN_ROW)"
+    maxnumPDM="select max(recno) from QUESTPDMNAPA.dbo.txlog WHERE recNo &lt; 100000000"
+  />
+</Settings>
